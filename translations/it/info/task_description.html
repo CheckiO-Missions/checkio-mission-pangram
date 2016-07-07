@@ -1,0 +1,41 @@
+<p>
+    Un pangramma (Greco:&pi;&alpha;&nu; &gamma;&rho;&#940;&mu;&mu;&alpha;, pan gramma, "ogni lettera") o frase oloalfabetica per un dato alfabeto
+    &egrave; una frase che usa ogni lettera dell'alfabeto almeno una volta.
+    Forse sei gi&agrave; familiare col ben noto pangramma "The quick brown fox jumps over the lazy dog".
+</p>
+<p>
+    Per questa missione useremo l'alfabeto latino (A-Z).
+    Ti viene dato un testo con lettere latine e simboli di punteggiatura.
+    Devi controllare se la frase &egrave; un pangramma oppure no.
+    Non fare distinzioni tra maiuscole e minuscole.
+</p>
+
+
+<p>
+    <strong>Input: </strong> Un testo come stringa.
+</p>
+
+<p>
+    <strong>Output: </strong> Se la frase sia un pangramma o meno, espresso come un booleano.
+</p>
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Esempio:</strong>
+    </p>
+    <textarea data-code="python">check_pangram("The quick brown fox jumps over the lazy dog.") == True
+check_pangram("ABCDEF.") == False</textarea>
+</div>
+
+<p class="for_info_only">
+    <strong>Come si usa: </strong>
+    I pangrammi sono stati usati per mostrare fonti tipografiche, testare equipaggiamenti,
+    e sviluppare abilit&agrave; si scrittura manuale, calligrafia e dattilografia per secoli.
+</p>
+
+<p>
+    <strong>Prerequisiti:</strong>
+</p>
+<pre class="brush: python">all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text)
+0 < len(text)</pre>
