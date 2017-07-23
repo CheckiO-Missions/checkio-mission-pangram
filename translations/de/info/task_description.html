@@ -31,10 +31,13 @@
     <p>
         <strong>Beispiel:</strong>
     </p>
-    <pre class="brush: python">
-    check_pangram("The quick brown fox jumps over the lazy dog.") == True
-    check_pangram("ABCDEF.") == False
-    </pre>
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: python">checkPangram("The quick brown fox jumps over the lazy dog.") == true
+checkPangram("ABCDEF.") == false</pre>
+{% else %}
+<pre class="brush: python">check_pangram("The quick brown fox jumps over the lazy dog.") == True
+check_pangram("ABCDEF.") == False</pre>
+{% endif %}
 </div>
 
 <p class="for_info_only">
@@ -46,7 +49,10 @@
 <p>
     <strong>Bedingungen:</strong>
 </p>
-<pre class="brush: python">
-    all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text)
-    0 < len(text)
-</pre>
+{% if interpreter.slug == "js-node" %}
+All ASCII English Letter(a-z,A-Z) and punctuations such as:
+<pre>!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~</pre>
+{% else %}
+<pre class="brush: python">all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text)
+0 < len(text)</pre>
+{% endif %}
