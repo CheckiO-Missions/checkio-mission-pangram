@@ -1,19 +1,27 @@
-"use strict";
+import assert from "assert";
 
-const ALPHABET = "abcdefghijklmnopqrstuvwxyz".split("");
-
-function checkPangram(text){
-    // is the given text is a pangram.
-
+function checkPangram(text: string): boolean {
     // your code here
-    return true;
+    return false;
 }
 
-var assert = require('assert');
+console.log('Example:');
+console.log(checkPangram(('The quick brown fox jumps over the '
+ + 'lazy dog.')));
 
-if (!global.is_checking) {
-    assert.equal(checkPangram("The quick brown fox jumps over the lazy dog."), true, "brown fox");
-    assert.equal(checkPangram("ABCDEF"), false, "ABC");
-    assert.equal(checkPangram("Bored? Craving a pub quiz fix? Why, just come to the Royal Oak!"), true, "Bored?");
-    console.log("If it is done - it is Done. Go Check is NOW!");
-}
+// These "asserts" are used for self-checking
+assert.equal(checkPangram(('The quick brown fox jumps over the '
+ + 'lazy dog.')), true);
+assert.equal(checkPangram('ABCDEF'), false);
+assert.equal(checkPangram('abcdefghijklmnopqrstuvwxyz'), true);
+assert.equal(checkPangram('ABCDEFGHIJKLMNOPQRSTUVWXYZ'), true);
+assert.equal(checkPangram('abcdefghijklmnopqrstuvwxy'), false);
+assert.equal(checkPangram(('Bored? Craving a pub quiz fix? Why, '
+ + 'just come to the Royal Oak!')), true);
+assert.equal(checkPangram(("As quirky joke, chefs won't pay "
+ + 'devil magic zebra tax.')), true);
+assert.equal(checkPangram(('Six big devils from Japan quickly '
+ + 'forgot how to walt.')), false);
+
+console.log("Coding complete? Click 'Check' to earn cool rewards!");
+    
