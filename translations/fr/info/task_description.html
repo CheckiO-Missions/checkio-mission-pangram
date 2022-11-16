@@ -25,7 +25,7 @@ pas d'importance.
 <p> 
 <strong>Exemple:</strong> 
 </p> 
-{% if interpreter.slug == "js-node" %}
+{% if is_js %}
 <pre class="brush: python">checkPangram("The quick brown fox jumps over the lazy dog.") == true
 checkPangram("ABCDEF.") == false</pre>
 {% else %}
@@ -45,10 +45,12 @@ en écriture, en calligraphie ou en dactylographie.
 <p> 
 <strong>Précondition:</strong> 
 </p> 
-{% if interpreter.slug == "js-node" %}
+{% if is_js %}
 All ASCII English Letter(a-z,A-Z) and punctuations such as:
 <pre>!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~</pre>
 {% else %}
-<pre class="brush: python">all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text)
-0 < len(text)</pre>
+<ul>
+    <li>all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text);</li>
+    <li>0 < len(text).</li>
+</ul>
 {% endif %}

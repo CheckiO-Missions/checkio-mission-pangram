@@ -12,11 +12,11 @@
 
 
 <p>
-    <strong>Input: </strong> Un testo come stringa.
+    <strong>Input:</strong> Un testo come stringa.
 </p>
 
 <p>
-    <strong>Output: </strong> Se la frase sia un pangramma o meno, espresso come un booleano.
+    <strong>Output:</strong> Se la frase sia un pangramma o meno, espresso come un booleano.
 </p>
 
 
@@ -24,13 +24,7 @@
     <p>
         <strong>Esempio:</strong>
     </p>
-    {% if interpreter.slug == "js-node" %}
-<pre class="brush: python">checkPangram("The quick brown fox jumps over the lazy dog.") == true
-checkPangram("ABCDEF.") == false</pre>
-{% else %}
-<pre class="brush: python">check_pangram("The quick brown fox jumps over the lazy dog.") == True
-check_pangram("ABCDEF.") == False</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p class="for_info_only">
@@ -42,10 +36,12 @@ check_pangram("ABCDEF.") == False</pre>
 <p>
     <strong>Prerequisiti:</strong>
 </p>
-{% if interpreter.slug == "js-node" %}
+{% if is_js %}
 All ASCII English Letter(a-z,A-Z) and punctuations such as:
 <pre>!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~</pre>
 {% else %}
-<pre class="brush: python">all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text)
-0 < len(text)</pre>
+<ul>
+    <li>all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text);</li>
+    <li>0 < len(text).</li>
+</ul>
 {% endif %}
