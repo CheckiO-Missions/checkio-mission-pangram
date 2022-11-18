@@ -31,19 +31,13 @@
     <p>
         <strong>例</strong>
     </p>
-    {% if interpreter.slug == "js-node" %}
-<pre class="brush: python">checkPangram("The quick brown fox jumps over the lazy dog.") == true
-checkPangram("ABCDEF.") == false</pre>
-{% else %}
-<pre class="brush: python">check_pangram("The quick brown fox jumps over the lazy dog.") == True
-check_pangram("ABCDEF.") == False</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p class="for_info_only">
   <strong>どうやって使われるか </strong>
   パングラムは書体の表示、装置のテスト、手書きや書道やキーボードのタイピング技術を練習するものとして長年使われてきました。
-    <!-- <strong>How it is used: </strong>
+    <!-- <strong>How it is used:</strong>
     Pangrams have been used to display typefaces, test equipment, and develop skills in handwriting, calligraphy, and
     keyboarding for ages. -->
 </p>
@@ -51,10 +45,12 @@ check_pangram("ABCDEF.") == False</pre>
 <p>
     <strong>事前条件</strong>
 </p>
-{% if interpreter.slug == "js-node" %}
+{% if is_js %}
 All ASCII English Letter(a-z,A-Z) and punctuations such as:
 <pre>!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~</pre>
 {% else %}
-<pre class="brush: python">all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text)
-0 < len(text)</pre>
+<ul>
+    <li>all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text);</li>
+    <li>0 < len(text).</li>
+</ul>
 {% endif %}
