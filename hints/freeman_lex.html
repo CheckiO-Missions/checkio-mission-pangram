@@ -1,0 +1,130 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        <p>
+            Catch an idea 💡! To iterate over the sequence of all letters in the same case and check every for being present in the given text (in a chosen case). If a letter is not present then it's not a pangram and your function may immediately return <b class="code">False</b>. Return <b class="code">True</b> if all letters are present.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, what should I start from?
+    </div>
+    <div class="answer">
+        <p>
+            Let's choose lower case and convert the given <b class="code">text</b> into this case with <a target="_blank" href="https://www.w3schools.com/python/ref_string_lower.asp">str.lower()</a> method.
+        </p>
+        <pre class="brush: python">
+t = text.lower()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What to do text?
+    </div>
+    <div class="answer">
+        <p>
+            Take a sequence of all letters in lower case (as you choose above), for example in a form of simple string, and iterate over it using <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">dor</a> loop. 
+        </p>
+        <pre class="brush: python">
+for char in "abcdefghijklmnopqrstuvwxyz":
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Help me to check a character.
+    </div>
+    <div class="answer">
+        <p>
+            Use <a target="_blank" href="https://www.w3schools.com/python/python_conditions.asp">if</a> statement and <a target="_blank" href="https://realpython.com/python-in-operator/">not in</a> operator to check if the current character is present in the given <b class="code">text</b>.
+        </p>
+        <pre class="brush: python">
+if char not in t:
+    ...
+        </pre>
+        <p>
+            As I said above, is a character is not in the <b class="code">text</b>, it's not a pangram and you function mau immediately return <b class="code">False</b>. 
+        </p>
+        <pre class="brush: python">
+if char not in t:
+    return False
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Help me to finish the code.
+    </div>
+    <div class="answer">
+        <p>
+            If all letters are present in the given <b class="code">text</b> at least once (no <b class="code">False</b> return), then the <b class="code">text</b> is a pangram and your function must return <b class="code">True</b> at the end.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So, how my final solution should look like?
+    </div>
+    <div class="answer">
+        <p>
+            You just need to join all previous hints and wrap your code into function expression. Using type hints for input and output data are highly recommended.
+        </p>
+        <p>Here is the whole solution:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def check_pangram(text: str) -> bool:
+
+    t = text.lower()    
+    for char in "abcdefghijklmnopqrstuvwxyz":
+        if char not in t:
+            return False
+    return True
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            Here you take lower case letters from standard module, convert both strings into sets and check that all lower case letters are in the given string (one set is a subset of another).
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from string import ascii_lowercase
+
+
+def check_pangram(text):
+    return set(ascii_lowercase).issubset(set(text.lower()))
+        </pre>
+        </div>
+        <p>
+            Using <b class="code">lambda</b> (anonymous) function, set comprehension and counting the number of unique letters in the given text.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+check_pangram = lambda text: len({x for x in text.lower() if x.isalpha()}) == 26
+        </pre>
+        </div>
+        <p>Click <b>Best Solutions</b> at mission menu and see a lot of other interesting solutions!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it 👍!
+    </div>
+</div>
+</body>
