@@ -1,0 +1,40 @@
+<p style="text-align: justify;">
+    泛音句（希腊语：παν<i>γράμμα</i>, pan gramma，"每个字母"）或特定字母表的全字母句是指每个字母至少使用一次的句子。也许您对众所周知的<i>"快棕狐跳过懒狗 "</i>的泛音句子并不陌生。
+</p><p>
+
+    在本任务中，我们将使用拉丁字母（A-Z）。给您一段包含拉丁字母和标点符号的文字。您需要检查该句子是否为成语。大小写并不重要。
+</p>
+<p>
+
+   <strong>输入：</strong>字符串文本<span>(str{% if is_js %}ing{% endif %})</span> 。
+</p>
+<p>
+
+   <strong>输出：</strong>句子是否为泛词的逻辑值<span>(bool{% if is_js %}ean{% endif %})</span> 。
+</p>
+
+
+<div class="for_info_only">
+    <p>
+        <strong>举例说明：</strong>
+    </p>
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+<p class="for_info_only">
+
+   <strong>如何使用：</strong>
+    长久以来，七巧板一直被用来展示字体、测试设备以及培养手写、书法和键盘输入的技能。
+</p>
+
+<p>
+    <strong>前提条件</strong>
+</p>
+{% if is_js %}
+所有 ASCII 英文字母（a-z,A-Z）和标点符号，如
+<pre>!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~</pre>
+{% else %}
+<ul>
+    <li>all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text)；</li>
+    <li>0 &lt; len(text).</li>
+</ul>
+{% endif %}
