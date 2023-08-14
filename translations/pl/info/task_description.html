@@ -1,0 +1,40 @@
+<p style="text-align: justify;">
+    Pangram (grecki: <i>παν γράμμα</i>, pan gramma, "każda litera") lub zdanie holoalfabetyczne dla danego alfabetu to zdanie wykorzystujące każdą literę alfabetu przynajmniej raz. Być może znają Państwo dobrze znany pangram <i>"Szybki brązowy lis przeskakuje leniwego psa"</i>.
+</p><p>
+
+    W tym zadaniu użyjemy alfabetu łacińskiego (A-Z). Otrzymują Państwo tekst z literami alfabetu łacińskiego i znakami interpunkcyjnymi. Proszę sprawdzić, czy zdanie jest pangramem, czy nie. Wielkość liter nie ma znaczenia.
+</p>
+<p>
+
+   <strong>Dane wejściowe:</strong> Tekst w postaci ciągu znaków <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+<p>
+
+   <strong>Dane wy</strong> jściowe <strong>:</strong> Czy zdanie jest pangramem czy nie jako wartość logiczna <span>(bool{% if is_js %}ean{% endif %})</span>.
+</p>
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Przykłady:</strong>
+    </p>
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+<p class="for_info_only">
+
+   <strong>Jak jest używa</strong>ny:
+    Pangramy są od wieków używane do wyświetlania krojów pisma, testowania sprzętu i rozwijania umiejętności pisania odręcznego, kaligrafii i pisania na klawiaturze.
+</p>
+
+<p>
+    <strong>Warunek wstępny:</strong>
+</p>
+{% if is_js %}
+Wszystkie angielskie litery ASCII (a-z, A-Z) i znaki interpunkcyjne, takie jak:
+<pre>!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~</pre>
+{% else %}
+<ul>
+    <li>all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text);</li>
+    <li>0 &lt; len(text).</li>
+</ul>
+{% endif %}
