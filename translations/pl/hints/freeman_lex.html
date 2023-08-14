@@ -1,0 +1,130 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Nie mam pojęcia, jak zacząć rozwiązywać tę misję.
+    </div>
+    <div class="answer">
+        <p>
+            Proszę złapać pomysł 💡! Aby iterować po sekwencji wszystkich liter w tym samym przypadku i sprawdzać, czy każda z nich jest obecna w podanym tekście (w wybranym przypadku). Jeśli dana litera nie występuje, to nie jest to pangram i funkcja może natychmiast zwrócić <b class="code">False</b>. Proszę zwrócić <b class="code">True</b> jeśli wszystkie litery są obecne.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, od czego powinienem zacząć?
+    </div>
+    <div class="answer">
+        <p>
+            Wybierzmy małe litery i przekonwertujmy podane <b class="code">text</b> na tę wielkość za pomocą metody <a target="_blank" href="https://www.w3schools.com/python/ref_string_lower.asp">str.lower()</a>.
+        </p>
+        <pre class="brush: python">
+t = text.lower()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Co zrobić z tekstem?
+    </div>
+    <div class="answer">
+        <p>
+            Proszę wziąć sekwencję wszystkich małych liter (jak wybrano powyżej), na przykład w postaci prostego łańcucha, i iterować po nim za pomocą pętli <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">dor</a>. 
+        </p>
+        <pre class="brush: python">
+for char in "abcdefghijklmnopqrstuvwxyz":
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Proszę mi pomóc sprawdzić znak.
+    </div>
+    <div class="answer">
+        <p>
+            Proszę użyć instrukcji <a target="_blank" href="https://www.w3schools.com/python/python_conditions.asp">if</a> i operatora <a target="_blank" href="https://realpython.com/python-in-operator/">not in</a>, aby sprawdzić, czy bieżący znak jest obecny w podanym <b class="code">text</b>.
+        </p>
+        <pre class="brush: python">
+if char not in t:
+    ...
+        </pre>
+        <p>
+            Jak wspomniałem powyżej, jeśli znak nie znajduje się w <b class="code">text</b>, nie jest to pangram i funkcja może natychmiast zwrócić <b class="code">False</b>. 
+        </p>
+        <pre class="brush: python">
+if char not in t:
+    return False
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Proszę mi pomóc dokończyć kod.
+    </div>
+    <div class="answer">
+        <p>
+            Jeśli wszystkie litery występują w podanym <b class="code">text</b> co najmniej raz (bez zwracania <b class="code">False</b> ), to <b class="code">text</b> jest pangramem i Pana funkcja musi zwrócić <b class="code">True</b> na końcu.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Jak więc powinno wyglądać moje ostateczne rozwiązanie?
+    </div>
+    <div class="answer">
+        <p>
+            Wystarczy połączyć wszystkie poprzednie podpowiedzi i zawinąć kod w wyrażenie funkcyjne. Używanie podpowiedzi typu dla danych wejściowych i wyjściowych jest wysoce zalecane.
+        </p>
+        <p>Poniżej znajduje się całe rozwiązanie:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def check_pangram(text: str) -> bool:
+
+    t = text.lower()    
+    for char in "abcdefghijklmnopqrstuvwxyz":
+        if char not in t:
+            return False
+    return True
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Proszę pokazać mi więcej rozwiązań!<br />
+        bo chcę być prawdziwą 🥇 Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Jasne, proszę łapać!</p>
+        <p>
+            Tutaj proszę wziąć małe litery ze standardowego modułu, przekonwertować oba ciągi na zbiory i sprawdzić, czy wszystkie małe litery znajdują się w podanym ciągu (jeden zbiór jest podzbiorem drugiego).
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from string import ascii_lowercase
+
+
+def check_pangram(text):
+    return set(ascii_lowercase).issubset(set(text.lower()))
+        </pre>
+        </div>
+        <p>
+            Używając funkcji <b class="code">lambda</b> (anonimowej), proszę ustawić zrozumienie i zliczyć liczbę unikalnych liter w podanym tekście.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+check_pangram = lambda text: len({x for x in text.lower() if x.isalpha()}) == 26
+        </pre>
+        </div>
+        <p>Proszę kliknąć <b>Best Solutions</b> w menu misji i zobaczyć wiele innych ciekawych rozwiązań!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Dzięki! Teraz wiem i rozumiem więcej! Wszystko działa jak należy!
+    </div>
+    <div class="answer">
+        Miło mi to słyszeć 👍!
+    </div>
+</div>
+</body>
