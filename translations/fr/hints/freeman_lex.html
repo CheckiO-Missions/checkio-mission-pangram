@@ -1,0 +1,130 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+    </div>
+    <div class="answer">
+        <p>
+            Attrapez une idée 💡! Itérer sur la séquence de toutes les lettres de la même casse et vérifier leur présence dans le texte donné (dans une casse choisie). Si une lettre n'est pas présente, il ne s'agit pas d'un pangramme et votre fonction peut immédiatement renvoyer <b class="code">False</b>. Renvoyez <b class="code">True</b> si toutes les lettres sont présentes.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, par quoi dois-je commencer?
+    </div>
+    <div class="answer">
+        <p>
+            Choisissons les minuscules et convertissons le site <b class="code">text</b> en minuscules à l'aide de la méthode <a target="_blank" href="https://www.w3schools.com/python/ref_string_lower.asp">str.lower()</a>.
+        </p>
+        <pre class="brush: python">
+t = text.lower()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Que faire du texte?
+    </div>
+    <div class="answer">
+        <p>
+            Prenez une séquence de toutes les lettres en minuscules (comme vous l'avez choisi ci-dessus), par exemple sous la forme d'une simple chaîne de caractères, et parcourez-la à l'aide de la boucle <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">dor</a>. 
+        </p>
+        <pre class="brush: python">
+for char in "abcdefghijklmnopqrstuvwxyz":
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Aidez-moi à vérifier un caractère.
+    </div>
+    <div class="answer">
+        <p>
+            Utilisez l'instruction <a target="_blank" href="https://www.w3schools.com/python/python_conditions.asp">if</a> et l'opérateur <a target="_blank" href="https://realpython.com/python-in-operator/">not in</a> pour vérifier si le caractère actuel est présent dans l'élément donné <b class="code">text</b>.
+        </p>
+        <pre class="brush: python">
+if char not in t:
+    ...
+        </pre>
+        <p>
+            Comme je l'ai dit plus haut, si un caractère n'est pas présent dans <b class="code">text</b>, il ne s'agit pas d'un pangramme et la fonction peut renvoyer immédiatement <b class="code">False</b>. 
+        </p>
+        <pre class="brush: python">
+if char not in t:
+    return False
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Aidez-moi à terminer le code.
+    </div>
+    <div class="answer">
+        <p>
+            Si toutes les lettres sont présentes dans le <b class="code">text</b> donné au moins une fois (pas de retour <b class="code">False</b> ), alors le <b class="code">text</b> est un pangramme et votre fonction doit retourner <b class="code">True</b> à la fin.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Alors, à quoi devrait ressembler ma solution finale?
+    </div>
+    <div class="answer">
+        <p>
+            Il vous suffit de combiner tous les indices précédents et d'envelopper votre code dans une expression de fonction. Il est fortement recommandé d'utiliser des indications de type pour les données d'entrée et de sortie.
+        </p>
+        <p>Voici la solution complète:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def check_pangram(text: str) -> bool:
+
+    t = text.lower()    
+    for char in "abcdefghijklmnopqrstuvwxyz":
+        if char not in t:
+            return False
+    return True
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Montrez-moi d'autres solutions!<br />
+        parce que je veux être une vraie 🥇 Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Bien sûr, prenez-le!</p>
+        <p>
+            Ici, vous prenez les lettres minuscules du module standard, convertissez les deux chaînes en ensembles et vérifiez que toutes les lettres minuscules sont dans la chaîne donnée (un ensemble est un sous-ensemble d'un autre).
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from string import ascii_lowercase
+
+
+def check_pangram(text):
+    return set(ascii_lowercase).issubset(set(text.lower()))
+        </pre>
+        </div>
+        <p>
+            En utilisant la fonction <b class="code">lambda</b> (anonyme), définissez la compréhension et comptez le nombre de lettres uniques dans le texte donné.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+check_pangram = lambda text: len({x for x in text.lower() if x.isalpha()}) == 26
+        </pre>
+        </div>
+        <p>Cliquez sur <b>Best Solutions</b> dans le menu mission et découvrez de nombreuses autres solutions intéressantes!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Merci beaucoup! J'en sais plus et je comprends mieux maintenant! Tout fonctionne bien!
+    </div>
+    <div class="answer">
+        Heureux de l'apprendre 👍!
+    </div>
+</div>
+</body>

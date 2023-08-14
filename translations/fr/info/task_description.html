@@ -1,56 +1,40 @@
-<p> 
-Un pangramme (du grec pan : « tous » et gramma : « lettre ») est une phrase comportant toutes les lettres de l'alphabet.
-Avec un peu d'ingéniosité, il est facile d'en créer sur le modèle des phrases réflexives :
-« Jugez que ce texte renferme l'alphabet, dix voyelles, k et w. » (Thérèse Amiel).
-</p> 
-<p> 
-Pour cette mission, nous utiliserons l'alphabet Latin (A-Z) qui comporte 26 lettres. Vous recevez en paramètre un texte avec 
-des lettres de l'alphabet latin et des caractères de ponctuation. 
-Vous devez déterminer si cette phrase est un pangramme. La casse des lettres (majuscule ou minuscule) n'a
-pas d'importance.
-</p> 
+<p style="text-align: justify;">
+    Un pangramme (grec: παν <i>γράμμα</i>, pan gramma, "chaque lettre") ou phrase holoalphabétique pour un alphabet donné est une phrase utilisant chaque lettre de l'alphabet au moins une fois. Vous connaissez peut-être le pangramme bien connu <i>"Le renard brun et rapide saute par-dessus le chien paresseux"</i>.
+</p><p>
+
+    Pour cette mission, nous utiliserons l'alphabet latin (A-Z). On vous donne un texte avec des lettres latines et des symboles de ponctuation. Vous devez vérifier si la phrase est un pangramme ou non. La casse n'a pas d'importance.
+</p>
+<p>
+
+   <strong>Entrée:</strong> Un texte sous forme de chaîne <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+<p>
+
+   <strong>Sortie:</strong> Si la phrase est un pangramme ou non en tant que valeur logique <span>(bool{% if is_js %}ean{% endif %})</span>.
+</p>
 
 
-<p> 
-<strong>Entrée: </strong> Un texte sous forme de chaine de caractères. 
-</p> 
- 
- 
-<p> 
-<strong>Résultat: </strong> Si la phrase est un pangramme, sous la forme d'un booléen. 
-</p> 
- 
- 
-<div class="Pour information seulement"> 
-<p> 
-<strong>Exemple:</strong> 
-</p> 
+<div class="for_info_only">
+    <p>
+        <strong>Exemples:</strong>
+    </p>
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+<p class="for_info_only">
+
+   <strong>Comment il est utilisé:</strong>
+    Les pangrammes sont utilisés depuis des siècles pour afficher des caractères, tester des équipements et développer des compétences en écriture manuscrite, en calligraphie et en saisie au clavier.
+</p>
+
+<p>
+    <strong>Condition préalable:</strong>
+</p>
 {% if is_js %}
-<pre class="brush: python">checkPangram("The quick brown fox jumps over the lazy dog.") == true
-checkPangram("ABCDEF.") == false</pre>
-{% else %}
-<pre class="brush: python">check_pangram("The quick brown fox jumps over the lazy dog.") == True
-check_pangram("ABCDEF.") == False</pre>
-{% endif %}
-</div> 
- 
- 
-<p class="Pour infomation seulement"> 
-<strong>Utilisation: </strong> 
-Les pangrammes sont  utilisés depuis longtemps pour visualiser les caractères, tester du matériel, et développer l'habileté
-en écriture, en calligraphie ou en dactylographie. 
-</p> 
- 
- 
-<p> 
-<strong>Précondition:</strong> 
-</p> 
-{% if is_js %}
-All ASCII English Letter(a-z,A-Z) and punctuations such as:
+Toutes les lettres ASCII anglaises (a-z,A-Z) et les ponctuations telles que:
 <pre>!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~</pre>
 {% else %}
 <ul>
     <li>all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text);</li>
-    <li>0 < len(text).</li>
+    <li>0 &lt; len(text).</li>
 </ul>
 {% endif %}
