@@ -1,0 +1,130 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        我不知道如何开始解决这个任务。
+    </div>
+    <div class="answer">
+        <p>
+            给你个建议💡！遍历相同大小写的所有字母序列，并检查每个字母是否出现在给定文本中（在选定的大小写中）。如果某个字母不存在，那么它就不是一个泛函，您的函数可能会立即返回<b class="code">False</b> 。如果所有字母都存在，则返回<b class="code">True</b> 。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        好吧，我应该从哪里开始呢？
+    </div>
+    <div class="answer">
+        <p>
+            让我们选择小写字母，然后用<a target="_blank" href="https://www.w3schools.com/python/ref_string_lower.asp">str.lower()</a> 方法将给定的<b class="code">text</b> 转换成这种大小写。
+        </p>
+        <pre class="brush: python">
+t = text.lower()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        如何处理文本？
+    </div>
+    <div class="answer">
+        <p>
+            例如，以简单字符串的形式获取所有小写字母的序列（如上所选），然后使用<a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">dor</a> 循环遍历该序列。 
+        </p>
+        <pre class="brush: python">
+for char in "abcdefghijklmnopqrstuvwxyz":
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        帮我检查一个字符。
+    </div>
+    <div class="answer">
+        <p>
+            使用<a target="_blank" href="https://www.w3schools.com/python/python_conditions.asp">if</a> 语句和<a target="_blank" href="https://realpython.com/python-in-operator/">not in</a> 运算符检查当前字符是否存在于给定的<b class="code">text</b> 中。
+        </p>
+        <pre class="brush: python">
+if char not in t:
+    ...
+        </pre>
+        <p>
+            如上所述，如果一个字符不在<b class="code">text</b> 中，它就不是一个泛型字符，您的函数将立即返回<b class="code">False</b> 。 
+        </p>
+        <pre class="brush: python">
+if char not in t:
+    return False
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        请帮我完成代码。
+    </div>
+    <div class="answer">
+        <p>
+            如果给定的<b class="code">text</b> 中至少出现一次所有字母（没有返回<b class="code">False</b> ），则<b class="code">text</b> 是一个泛型字符串，您的函数必须在最后返回<b class="code">True</b> 。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        那么，我的最终解决方案应该是怎样的呢？
+    </div>
+    <div class="answer">
+        <p>
+            您只需将之前的所有提示连接起来，然后将代码封装成函数表达式即可。强烈建议对输入和输出数据使用类型提示。
+        </p>
+        <p>以下是整个解决方案：</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def check_pangram(text: str) -> bool:
+
+    t = text.lower()    
+    for char in "abcdefghijklmnopqrstuvwxyz":
+        if char not in t:
+            return False
+    return True
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        向我展示更多解决方案！<br />
+        因为我想成为一个真正的 🥇 Python Ninnjaa！
+    </div>
+    <div class="answer">
+        <p>当然，抓紧时间！</p>
+        <p>
+            在这里，你从标准模块中提取小写字母，将两个字符串转换成集合，然后检查给定字符串中是否包含所有小写字母（一个集合是另一个集合的子集）。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from string import ascii_lowercase
+
+
+def check_pangram(text):
+    return set(ascii_lowercase).issubset(set(text.lower()))
+        </pre>
+        </div>
+        <p>
+            使用<b class="code">lambda</b> （匿名）函数，设置理解并计算给定文本中唯一字母的数量。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+check_pangram = lambda text: len({x for x in text.lower() if x.isalpha()}) == 26
+        </pre>
+        </div>
+        <p>单击任务菜单中的<b>Best Solutions</b> ，查看许多其他有趣的解决方案！</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        谢谢！我现在知道并理解得更多了！一切正常！
+    </div>
+    <div class="answer">
+        很高兴听到这个消息 👍！
+    </div>
+</div>
+</body>
