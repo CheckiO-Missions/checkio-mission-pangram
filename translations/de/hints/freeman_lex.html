@@ -1,0 +1,130 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+    </div>
+    <div class="answer">
+        <p>
+            Haben Sie eine Idee 💡! Iterieren Sie über die Folge aller Buchstaben in der gleichen Groß- und Kleinschreibung und überprüfen Sie jeden einzelnen auf sein Vorhandensein in dem gegebenen Text (in einer ausgewählten Groß- und Kleinschreibung). Wenn ein Buchstabe nicht vorhanden ist, handelt es sich nicht um ein Pangramm und Ihre Funktion kann sofort <b class="code">False</b> zurückgeben. Geben Sie <b class="code">True</b> zurück, wenn alle Buchstaben vorhanden sind.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, womit soll ich beginnen?
+    </div>
+    <div class="answer">
+        <p>
+            Wählen wir Kleinbuchstaben und konvertieren die angegebene <b class="code">text</b> mit der Methode <a target="_blank" href="https://www.w3schools.com/python/ref_string_lower.asp">str.lower()</a> in diesen Fall.
+        </p>
+        <pre class="brush: python">
+t = text.lower()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Was soll ich mit dem Text machen?
+    </div>
+    <div class="answer">
+        <p>
+            Nehmen Sie eine Folge aller Buchstaben in Kleinbuchstaben (wie Sie sie oben ausgewählt haben), z.B. in Form einer einfachen Zeichenkette, und iterieren Sie darüber mit der Schleife <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">dor</a>. 
+        </p>
+        <pre class="brush: python">
+for char in "abcdefghijklmnopqrstuvwxyz":
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Helfen Sie mir, ein Zeichen zu überprüfen.
+    </div>
+    <div class="answer">
+        <p>
+            Verwenden Sie die Anweisung <a target="_blank" href="https://www.w3schools.com/python/python_conditions.asp">if</a> und den Operator <a target="_blank" href="https://realpython.com/python-in-operator/">not in</a>, um zu prüfen, ob das aktuelle Zeichen in der angegebenen <b class="code">text</b> vorhanden ist.
+        </p>
+        <pre class="brush: python">
+if char not in t:
+    ...
+        </pre>
+        <p>
+            Wie ich oben schon sagte, ist ein Zeichen nicht in <b class="code">text</b> enthalten, ist es kein Pangramm und Ihre Funktion muss sofort <b class="code">False</b> zurückgeben. 
+        </p>
+        <pre class="brush: python">
+if char not in t:
+    return False
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Helfen Sie mir, den Code zu beenden.
+    </div>
+    <div class="answer">
+        <p>
+            Wenn alle Buchstaben in der angegebenen <b class="code">text</b> mindestens einmal vorkommen (keine <b class="code">False</b> Rückgabe), dann ist die <b class="code">text</b> ein Pangramm und Ihre Funktion muss am Ende <b class="code">True</b> zurückgeben.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Wie sollte also meine endgültige Lösung aussehen?
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen nur alle vorherigen Hinweise zusammenführen und Ihren Code in einen Funktionsausdruck verpacken. Die Verwendung von Typ-Hinweisen für Eingabe- und Ausgabedaten wird dringend empfohlen.
+        </p>
+        <p>Hier ist die gesamte Lösung:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def check_pangram(text: str) -> bool:
+
+    t = text.lower()    
+    for char in "abcdefghijklmnopqrstuvwxyz":
+        if char not in t:
+            return False
+    return True
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Zeigen Sie mir mehr Lösungen!<br />
+        denn ich möchte ein echter 🥇 Python Ninnjaa sein!
+    </div>
+    <div class="answer">
+        <p>Klar, schnapp sie dir!</p>
+        <p>
+            Hier nehmen Sie Kleinbuchstaben aus dem Standardmodul, konvertieren beide Zeichenketten in Mengen und prüfen, ob alle Kleinbuchstaben in der angegebenen Zeichenkette enthalten sind (eine Menge ist eine Teilmenge einer anderen).
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from string import ascii_lowercase
+
+
+def check_pangram(text):
+    return set(ascii_lowercase).issubset(set(text.lower()))
+        </pre>
+        </div>
+        <p>
+            Verwenden Sie die (anonyme) Funktion <b class="code">lambda</b>, setzen Sie das Verständnis und zählen Sie die Anzahl der eindeutigen Buchstaben in dem gegebenen Text.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+check_pangram = lambda text: len({x for x in text.lower() if x.isalpha()}) == 26
+        </pre>
+        </div>
+        <p>Klicken Sie auf <b>Best Solutions</b> im Menü Mission und sehen Sie sich viele weitere interessante Lösungen an!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Vielen Dank! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+    </div>
+    <div class="answer">
+        Freut mich zu hören 👍!
+    </div>
+</div>
+</body>

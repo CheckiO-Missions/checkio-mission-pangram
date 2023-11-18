@@ -1,56 +1,43 @@
-<p>
-    Ein Pangramm (aus dem griechischen: παν γράμμα, pan gramma, "jeder Buchstabe") oder
-    holoalphabetischer Satz ist ein Satz, der jeden Buchstaben eines bestimmten Alphabets
-    mindestens einmal verwendet.<br>
-    Vielleicht hast du schon einmal von diesem deutschen Pangramm gehört:<br>
-    <i>"Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.", "The quick brown fox jumps over the lazy dog"</i><br>
-    Als ein <i>echtes</i> Pangramm bezeichnet man einen Satz, der jeden Buchstaben eines
-    bestimmten Alphabets <i>genau einmal</i> enthält.
+<p style="text-align: justify;">
+    Ein Pangramm (griechisch: παν <i>γράμμα</i>, pan gramma, "jeder Buchstabe") oder holoalphabetischer Satz für ein bestimmtes Alphabet ist ein Satz, in dem jeder Buchstabe des Alphabets mindestens einmal vorkommt. Vielleicht kennen Sie das bekannte Pangramm <i>"Der schnelle braune Fuchs springt über den faulen Hund"</i>.
 </p>
 <p style="text-align: center;">
     <img  title="example" src="{{MEDIA}}pangram.jpeg" alt="example" style="max-height: 300px"/>
 </p>
-
 <p>
-    Für diese Mission verwenden wir das lateinische Alphabet (A-Z).<br>
-    Du erhältst einen Text mit lateinischen Buchstaben und Interpunktionszeichen und
-    sollst prüfen, ob der Satz ein Pangramm ist oder nicht. Groß- / Kleinschreibung spielt
-    keine Rolle.
-</p>
-
-
-<p>
-    <strong>Eingabe: </strong> Ein Text als String.
+    Für diese Aufgabe werden wir das lateinische Alphabet (A-Z) verwenden. Sie erhalten einen Text mit lateinischen Buchstaben und Interpunktionszeichen. Sie müssen prüfen, ob der Satz ein Pangramm ist oder nicht. Die Groß- und Kleinschreibung spielt keine Rolle.
 </p>
 
 <p>
-    <strong>Ausgabe: </strong>
-    Ob der Satz ein Pangramm ist oder nicht, als boolescher Wert.
+   <strong>Eingabe:</strong> Ein Text als Zeichenkette <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> Ob der Satz ein Pangramm ist oder nicht als logischer Wert <span>(bool{% if is_js %}ean{% endif %})</span>.
 </p>
 
 
 <div class="for_info_only">
     <p>
-        <strong>Beispiel:</strong>
+        <strong>Beispiele:</strong>
     </p>
 <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p class="for_info_only">
-    <strong>Wozu das gut ist: </strong>
-    Pangramme werden zum Beispiel verwendet, um Schriftenarten zu präsentieren oder um die
-    Handschrift, Kalligrafie und das Maschinenschreiben zu üben.
+   <strong>Wie es verwendet wird:</strong>
+    Pangramme werden seit jeher verwendet, um Schriftarten darzustellen, Geräte zu testen und Fähigkeiten in Handschrift, Kalligraphie und Tastaturschreiben zu entwickeln.
 </p>
 
 <p>
-    <strong>Bedingungen:</strong>
+    <strong>Vorbedingung:</strong>
 </p>
 {% if is_js %}
-All ASCII English Letter(a-z,A-Z) and punctuations such as:
+Alle englischen ASCII-Buchstaben (a-z,A-Z) und Interpunktionen wie z.B.:
 <pre>!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~</pre>
 {% else %}
 <ul>
     <li>all(ch in (string.punctuation + string.ascii_letters + " ") for ch in text);</li>
-    <li>0 < len(text).</li>
+    <li>0 &lt; len(text).</li>
 </ul>
 {% endif %}
